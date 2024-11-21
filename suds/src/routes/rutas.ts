@@ -3,6 +3,8 @@ import accesoControladorVerificar from '../controller/acceso/accesoControladorVe
 import ctrlUsuarios from "../controller/usuarios/usuariosController";
 import ctrlComponentes from "../controller/componentes/componentesController";
 import ctrlCriterios from "../controller/criterios/criteriosController";
+import ctrlProyectos from "../controller/proyectos/proyectosController";
+import ctrlResultados from "../controller/resultados/resrultadosController";
 
 class Rutas {
   public rutasAPI: Router;
@@ -22,6 +24,8 @@ class Rutas {
     this.rutasAPI.post("/login",accesoControladorVerificar.verificarUsuario);
     this.rutasAPI.get("/listarTodosCom", ctrlComponentes.listarTodosCom);
     this.rutasAPI.get("/listarTodosCri", ctrlCriterios.listarTodosCri);
+    this.rutasAPI.get("/listarTodosPro", ctrlProyectos.listarTodosPro);
+    this.rutasAPI.get("/listarTodosRes", ctrlResultados.listarTodosRes);
     
   }
 }

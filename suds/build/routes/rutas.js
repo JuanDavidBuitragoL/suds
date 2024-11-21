@@ -7,6 +7,8 @@ const express_1 = require("express");
 const accesoControladorVerificar_1 = __importDefault(require("../controller/acceso/accesoControladorVerificar"));
 const componentesController_1 = __importDefault(require("../controller/componentes/componentesController"));
 const criteriosController_1 = __importDefault(require("../controller/criterios/criteriosController"));
+const proyectosController_1 = __importDefault(require("../controller/proyectos/proyectosController"));
+const resrultadosController_1 = __importDefault(require("../controller/resultados/resrultadosController"));
 class Rutas {
     constructor() {
         this.rutasAPI = (0, express_1.Router)();
@@ -21,6 +23,8 @@ class Rutas {
         this.rutasAPI.post("/login", accesoControladorVerificar_1.default.verificarUsuario);
         this.rutasAPI.get("/listarTodosCom", componentesController_1.default.listarTodosCom);
         this.rutasAPI.get("/listarTodosCri", criteriosController_1.default.listarTodosCri);
+        this.rutasAPI.get("/listarTodosPro", proyectosController_1.default.listarTodosPro);
+        this.rutasAPI.get("/listarTodosRes", resrultadosController_1.default.listarTodosRes);
     }
 }
 const misRutas = new Rutas();

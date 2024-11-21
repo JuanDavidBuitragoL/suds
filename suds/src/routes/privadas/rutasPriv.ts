@@ -2,6 +2,8 @@ import { Router} from 'express';
 import ctrlUsuarios from '../../controller/usuarios/usuariosController';
 import ctrlComponentes from '../../controller/componentes/componentesController';
 import ctrlCriterios from '../../controller/criterios/criteriosController';
+import ctrlProyectos from '../../controller/proyectos/proyectosController';
+import ctrlResultados from '../../controller/resultados/resrultadosController';
 
 
 class Rutas{
@@ -32,6 +34,16 @@ class Rutas{
         this.rutasAPI.post("/crearCri", ctrlCriterios.crearCriterio);
         this.rutasAPI.delete("/eliminarCri/:id", ctrlCriterios.borrarCriterio);
         this.rutasAPI.put("/editarCri/:id", ctrlCriterios.editarCriterio);
+        //Proyectos
+        //this.rutasAPI.get("/listarTodosPro", ctrlProyectos.listarTodosPro);
+        this.rutasAPI.post("/crearPro", ctrlProyectos.crearProyecto);
+        this.rutasAPI.delete("/eliminarPro/:id", ctrlProyectos.borrarProyecto);
+        this.rutasAPI.put("/editarPro/:id", ctrlProyectos.editarProyecto);
+        //Resultados
+        //this.rutasAPI.get("/listarTodosRes", ctrlProyectos.listarTodosPro);
+        this.rutasAPI.post("/crearRes", ctrlResultados.crearResultado);
+        this.rutasAPI.delete("/eliminarRes/:id", ctrlResultados.borrarResultado);
+        this.rutasAPI.put("/editarRes/:id", ctrlResultados.editarResultado);
       
     }
 }
