@@ -1,6 +1,8 @@
 import { Router } from "express";
 import accesoControladorVerificar from '../controller/acceso/accesoControladorVerificar';
 import ctrlUsuarios from "../controller/usuarios/usuariosController";
+import ctrlComponentes from "../controller/componentes/componentesController";
+import ctrlCriterios from "../controller/criterios/criteriosController";
 
 class Rutas {
   public rutasAPI: Router;
@@ -18,7 +20,9 @@ class Rutas {
 
   public rutas() {
     this.rutasAPI.post("/login",accesoControladorVerificar.verificarUsuario);
-    this.rutasAPI.get("/listarTodosUsu", ctrlUsuarios.ctrlListarTodosUsu);
+    this.rutasAPI.get("/listarTodosCom", ctrlComponentes.listarTodosCom);
+    this.rutasAPI.get("/listarTodosCri", ctrlCriterios.listarTodosCri);
+    
   }
 }
 const misRutas = new Rutas();

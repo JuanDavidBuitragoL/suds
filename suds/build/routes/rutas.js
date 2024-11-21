@@ -5,7 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const accesoControladorVerificar_1 = __importDefault(require("../controller/acceso/accesoControladorVerificar"));
-const usuariosController_1 = __importDefault(require("../controller/usuarios/usuariosController"));
+const componentesController_1 = __importDefault(require("../controller/componentes/componentesController"));
+const criteriosController_1 = __importDefault(require("../controller/criterios/criteriosController"));
 class Rutas {
     constructor() {
         this.rutasAPI = (0, express_1.Router)();
@@ -18,7 +19,8 @@ class Rutas {
     }
     rutas() {
         this.rutasAPI.post("/login", accesoControladorVerificar_1.default.verificarUsuario);
-        this.rutasAPI.get("/listarTodosUsu", usuariosController_1.default.ctrlListarTodosUsu);
+        this.rutasAPI.get("/listarTodosCom", componentesController_1.default.listarTodosCom);
+        this.rutasAPI.get("/listarTodosCri", criteriosController_1.default.listarTodosCri);
     }
 }
 const misRutas = new Rutas();

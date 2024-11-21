@@ -1,5 +1,7 @@
 import { Router} from 'express';
 import ctrlUsuarios from '../../controller/usuarios/usuariosController';
+import ctrlComponentes from '../../controller/componentes/componentesController';
+import ctrlCriterios from '../../controller/criterios/criteriosController';
 
 
 class Rutas{
@@ -15,10 +17,21 @@ class Rutas{
     }
 
     public rutas (){
+        //Usuarios
         this.rutasAPI.get("/listarTodosUsu", ctrlUsuarios.ctrlListarTodosUsu);
         this.rutasAPI.post("/crearUsu", ctrlUsuarios.postUsuario);
         this.rutasAPI.delete("/eliminarUsu/:id", ctrlUsuarios.borrarUsuario);
         this.rutasAPI.put("/editarUsu/:id", ctrlUsuarios.updateUsuario);
+        //Componentes
+        //this.rutasAPI.get("/listarTodosCom", ctrlComponentes.ctrlListarTodosCom);
+        this.rutasAPI.post("/crearCom", ctrlComponentes.crearComponente);
+        this.rutasAPI.delete("/eliminarCom/:id", ctrlComponentes.borrarComponente);
+        this.rutasAPI.put("/editarCom/:id", ctrlComponentes.editarComponente);
+        //Criterios
+        //this.rutasAPI.get("/listarTodosCri", ctrlCriterios.listarTodosCri);
+        this.rutasAPI.post("/crearCri", ctrlCriterios.crearCriterio);
+        this.rutasAPI.delete("/eliminarCri/:id", ctrlCriterios.borrarCriterio);
+        this.rutasAPI.put("/editarCri/:id", ctrlCriterios.editarCriterio);
       
     }
 }
