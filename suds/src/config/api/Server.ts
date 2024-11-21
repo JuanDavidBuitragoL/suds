@@ -6,6 +6,10 @@ import cors from "cors";
 import rutasAPI from "../../routes/rutas";
 import validacion from "../../middleware/Validacion";
 import rutasPriv from "../../routes/privadas/rutasPriv";
+import rutasRoles from "../../routes/privadas/rutasRoles";
+import rutasIndicadores from "../../routes/privadas/rutasIndicadores";
+import rutasIngenieros from "../../routes/privadas/rutasIngenieros";
+
 
 class Server {
   public app: Application;
@@ -29,6 +33,9 @@ class Server {
   public activarRutas(): void {
     this.app.use("/api/acceso",rutasAPI)
     this.app.use("/api/acceso/privada",validacion.delToken,rutasPriv)
+    this.app.use("/api/acceso/privada",validacion.delToken,rutasRoles)
+    this.app.use("/api/acceso/privada",validacion.delToken,rutasIndicadores)
+    this.app.use("/api/acceso/privada",validacion.delToken,rutasIngenieros)
   }
   public iniciar(): void {
     const puerto = this.app.get("PORT");

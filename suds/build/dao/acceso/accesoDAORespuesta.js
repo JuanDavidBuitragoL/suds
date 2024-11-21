@@ -19,7 +19,7 @@ class accesoDAORespuesta {
             if (registro != null) {
                 const miTokencito = jsonwebtoken_1.default.sign({
                     codiguito: registro.id_usuario,
-                    usuario: registro.nombre_usuario,
+                    usuario: registro.correo_usuario,
                     dosDev: "Eso somos",
                 }, "laClave", { expiresIn: "8h" });
                 return res.status(200).json({ token: miTokencito });

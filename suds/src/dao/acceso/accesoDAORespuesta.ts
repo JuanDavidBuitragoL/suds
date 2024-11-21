@@ -6,7 +6,7 @@ class accesoDAORespuesta{
         if(registro != null){
             const miTokencito = jwt.sign({
                 codiguito: registro.id_usuario,
-                usuario: registro.nombre_usuario,
+                usuario: registro.correo_usuario,
                 dosDev: "Eso somos",
             },
              "laClave",

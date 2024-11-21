@@ -10,6 +10,9 @@ const cors_1 = __importDefault(require("cors"));
 const rutas_1 = __importDefault(require("../../routes/rutas"));
 const Validacion_1 = __importDefault(require("../../middleware/Validacion"));
 const rutasPriv_1 = __importDefault(require("../../routes/privadas/rutasPriv"));
+const rutasRoles_1 = __importDefault(require("../../routes/privadas/rutasRoles"));
+const rutasIndicadores_1 = __importDefault(require("../../routes/privadas/rutasIndicadores"));
+const rutasIngenieros_1 = __importDefault(require("../../routes/privadas/rutasIngenieros"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -28,6 +31,9 @@ class Server {
     activarRutas() {
         this.app.use("/api/acceso", rutas_1.default);
         this.app.use("/api/acceso/privada", Validacion_1.default.delToken, rutasPriv_1.default);
+        this.app.use("/api/acceso/privada", Validacion_1.default.delToken, rutasRoles_1.default);
+        this.app.use("/api/acceso/privada", Validacion_1.default.delToken, rutasIndicadores_1.default);
+        this.app.use("/api/acceso/privada", Validacion_1.default.delToken, rutasIngenieros_1.default);
     }
     iniciar() {
         const puerto = this.app.get("PORT");

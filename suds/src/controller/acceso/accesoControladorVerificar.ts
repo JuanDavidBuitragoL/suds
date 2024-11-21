@@ -5,9 +5,9 @@ import validarAcceso from "../../dao/acceso/validarAcceso"
 
 class accesoControladorVerificar extends validarAcceso{
     public verificarUsuario(req: Request, res: Response): void {
-        const usuario = req.body.usuarioAcceso;
-        const clave = req.body.claveAcceso;
-        const parametro = [usuario, clave];
+        const correo_usuario = req.body.correo_usuario;
+        const clave = req.body.password;
+        const parametro = [correo_usuario, clave];
         accesoControladorVerificar.iniciarSesion(
           SQL_ACCESO_VERIFICAR.ACCESO_VERIFICAR,
           parametro,
