@@ -40,7 +40,7 @@ class Rutas{
         this.rutasAPI.delete("/eliminarPro/:id", ctrlProyectos.borrarProyecto);
         this.rutasAPI.put("/editarPro/:id", ctrlProyectos.editarProyecto);
         //Resultados
-        //this.rutasAPI.get("/listarTodosRes", ctrlProyectos.listarTodosPro);
+        this.rutasAPI.get("/listarTodosRes", ctrlResultados.listarTodosRes);
         this.rutasAPI.post("/crearRes", ctrlResultados.crearResultado);
         this.rutasAPI.delete("/eliminarRes/:id", ctrlResultados.borrarResultado);
         this.rutasAPI.put("/editarRes/:id", ctrlResultados.editarResultado);

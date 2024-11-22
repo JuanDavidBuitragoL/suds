@@ -39,7 +39,7 @@ class Rutas {
         this.rutasAPI.delete("/eliminarPro/:id", proyectosController_1.default.borrarProyecto);
         this.rutasAPI.put("/editarPro/:id", proyectosController_1.default.editarProyecto);
         //Resultados
-        //this.rutasAPI.get("/listarTodosRes", ctrlProyectos.listarTodosPro);
+        this.rutasAPI.get("/listarTodosRes", resrultadosController_1.default.listarTodosRes);
         this.rutasAPI.post("/crearRes", resrultadosController_1.default.crearResultado);
         this.rutasAPI.delete("/eliminarRes/:id", resrultadosController_1.default.borrarResultado);
         this.rutasAPI.put("/editarRes/:id", resrultadosController_1.default.editarResultado);
