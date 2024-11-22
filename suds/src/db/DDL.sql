@@ -56,10 +56,10 @@ CREATE TABLE proyectos (
 CREATE TABLE usuarios (
     id_usuario SERIAL NOT NULL PRIMARY KEY,
     correo_usuario VARCHAR(254) NOT NULL,
-    password VARCHAR(254) NOT NULL,
+    password_usuario VARCHAR(254) NOT NULL,
     nombre_usuario VARCHAR(254) NOT NULL,
-    nombres VARCHAR(254) NOT NULL,
-    apellidos VARCHAR(254) NOT NULL
+    nombres_usuario VARCHAR(254) NOT NULL,
+    apellidos_usuario VARCHAR(254) NOT NULL
 );
 
 -- Tabla ingenieros

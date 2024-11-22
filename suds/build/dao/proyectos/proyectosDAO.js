@@ -65,12 +65,17 @@ class proyectosDAO {
                 .task((consulta) => __awaiter(this, void 0, void 0, function* () {
                 return yield consulta.result(sqlActualizar, params);
             }))
-                .then(() => {
-                res.status(200).json({ Mensaje: "Proyecto actualizado." });
+                .then((respuesta) => {
+                console.log(respuesta);
+                res.status(200).json({
+                    respuesta: "proyecto actualizad@ ",
+                });
             })
-                .catch((error) => {
-                console.error("Error actualizando proyecto:", error);
-                res.status(400).json({ Mensaje: "Error actualizando proyecto." });
+                .catch((mierror) => {
+                console.log("Error", mierror);
+                res.status(400).json({
+                    Respuesta: "proyecto no actualizad@",
+                });
             });
         });
     }

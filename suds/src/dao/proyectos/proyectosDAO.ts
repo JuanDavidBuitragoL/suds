@@ -49,19 +49,28 @@ class proyectosDAO {
           })
       }
 
-    protected static async editarProyecto(sqlActualizar: string, params: any, res: Response): Promise<any> {
+      protected static async editarProyecto(
+        sqlActualizar: string,
+        params: any,
+        res: Response
+      ): Promise<any> {
         await pool
-            .task(async (consulta) => {
-                return await consulta.result(sqlActualizar, params);
-            })
-            .then(() => {
-                res.status(200).json({ Mensaje: "Proyecto actualizado." });
-            })
-            .catch((error) => {
-                console.error("Error actualizando proyecto:", error);
-                res.status(400).json({ Mensaje: "Error actualizando proyecto." });
+          .task(async (consulta) => {
+            return await consulta.result(sqlActualizar, params);
+          })
+          .then((respuesta) => {
+            console.log(respuesta);
+            res.status(200).json({
+              respuesta: "proyecto actualizad@ ",
             });
-    }
+          })
+          .catch((mierror) => {
+            console.log("Error", mierror);
+            res.status(400).json({
+              Respuesta: "proyecto no actualizad@",
+            });
+          });
+      }
 
     protected static async borrarProyecto(sqlBorrar: string, params: any, res: Response): Promise<any> {
         await pool
