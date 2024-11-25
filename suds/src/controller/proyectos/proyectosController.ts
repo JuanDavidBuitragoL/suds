@@ -25,6 +25,14 @@ class proyectosController extends proyectosDAO {
         const parametro = [id_proyecto];
         proyectosController.borrarProyecto(SQL_PROYECTOS.ELIMINAR, parametro, res);
     }
+
+    public listarId(req:Request, res: Response){
+        const codigo = req.params.id;
+        const parametro = [codigo];
+        const sql_listar_id = SQL_PROYECTOS.COMPONENTES;
+          
+        proyectosController.listarProyectoPorId(sql_listar_id,parametro,res);
+      }
 }
 
 const ctrlProyectos = new proyectosController();

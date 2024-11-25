@@ -63,6 +63,19 @@ class proyectosDAO {
             });
     }
 
+    protected static async listarProyectoPorId(sql_listar: string, parametros: any, res: Response): Promise<any> {
+      await pool
+          .result(sql_listar, parametros)
+          .then((respuesta) => {
+              console.log(">>>>>" + respuesta.rows);
+              return res.status(200).json({ Mensaje: "Proyecto: ", Respuesta: respuesta.rows });
+          })
+          .catch((error) => {
+              console.log("Exploto D:...", error);
+              res.status(400).json({ Mensaje: "Error listando Proyecto, comunique al administrador" });
+          });
+     }
+
     protected static async borrarProyecto(sqlBorrar: string, params: any, res: Response): Promise<any> {
         await pool
             .result(sqlBorrar, params)

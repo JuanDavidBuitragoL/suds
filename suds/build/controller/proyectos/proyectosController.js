@@ -25,6 +25,12 @@ class proyectosController extends proyectosDAO_1.default {
         const parametro = [id_proyecto];
         proyectosController.borrarProyecto(proyectosRepository_1.SQL_PROYECTOS.ELIMINAR, parametro, res);
     }
+    listarId(req, res) {
+        const codigo = req.params.id;
+        const parametro = [codigo];
+        const sql_listar_id = proyectosRepository_1.SQL_PROYECTOS.COMPONENTES;
+        proyectosController.listarProyectoPorId(sql_listar_id, parametro, res);
+    }
 }
 const ctrlProyectos = new proyectosController();
 exports.default = ctrlProyectos;

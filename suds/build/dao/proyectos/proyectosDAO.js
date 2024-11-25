@@ -74,6 +74,20 @@ class proyectosDAO {
             });
         });
     }
+    static listarProyectoPorId(sql_listar, parametros, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            yield conexion_1.default
+                .result(sql_listar, parametros)
+                .then((respuesta) => {
+                console.log(">>>>>" + respuesta.rows);
+                return res.status(200).json({ Mensaje: "Proyecto: ", Respuesta: respuesta.rows });
+            })
+                .catch((error) => {
+                console.log("Exploto D:...", error);
+                res.status(400).json({ Mensaje: "Error listando Proyecto, comunique al administrador" });
+            });
+        });
+    }
     static borrarProyecto(sqlBorrar, params, res) {
         return __awaiter(this, void 0, void 0, function* () {
             yield conexion_1.default

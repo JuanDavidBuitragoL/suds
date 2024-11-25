@@ -24,22 +24,23 @@ class Rutas {
         this.rutasAPI.delete("/eliminarUsu/:id", usuariosController_1.default.borrarUsuario);
         this.rutasAPI.put("/editarUsu/:id", usuariosController_1.default.updateUsuario);
         //Componentes
-        //this.rutasAPI.get("/listarTodosCom", ctrlComponentes.ctrlListarTodosCom);
+        this.rutasAPI.get("/listarTodosCom", componentesController_1.default.listarTodosCom);
         this.rutasAPI.post("/crearCom", componentesController_1.default.crearComponente);
         this.rutasAPI.delete("/eliminarCom/:id", componentesController_1.default.borrarComponente);
         this.rutasAPI.put("/editarCom/:id", componentesController_1.default.editarComponente);
         //Criterios
-        //this.rutasAPI.get("/listarTodosCri", ctrlCriterios.listarTodosCri);
+        this.rutasAPI.get("/listarTodosCri", criteriosController_1.default.listarTodosCri);
         this.rutasAPI.post("/crearCri", criteriosController_1.default.crearCriterio);
         this.rutasAPI.delete("/eliminarCri/:id", criteriosController_1.default.borrarCriterio);
         this.rutasAPI.put("/editarCri/:id", criteriosController_1.default.editarCriterio);
         //Proyectos
-        //this.rutasAPI.get("/listarTodosPro", ctrlProyectos.listarTodosPro);
+        this.rutasAPI.get("/listarTodosPro", proyectosController_1.default.listarTodosPro);
         this.rutasAPI.post("/crearPro", proyectosController_1.default.crearProyecto);
         this.rutasAPI.delete("/eliminarPro/:id", proyectosController_1.default.borrarProyecto);
         this.rutasAPI.put("/editarPro/:id", proyectosController_1.default.editarProyecto);
+        this.rutasAPI.get("/listarComponentes/:id", proyectosController_1.default.listarId);
         //Resultados
-        //this.rutasAPI.get("/listarTodosRes", ctrlProyectos.listarTodosPro);
+        this.rutasAPI.get("/listarTodosRes", resrultadosController_1.default.listarTodosRes);
         this.rutasAPI.post("/crearRes", resrultadosController_1.default.crearResultado);
         this.rutasAPI.delete("/eliminarRes/:id", resrultadosController_1.default.borrarResultado);
         this.rutasAPI.put("/editarRes/:id", resrultadosController_1.default.editarResultado);

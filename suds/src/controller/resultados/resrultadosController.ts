@@ -8,15 +8,15 @@ class resultadosController extends resultadosDAO {
     }
 
     public crearResultado(req: Request, res: Response): void {
-        const { nombre_resultado, descripcion, valor_cualitativo, valor_cuantitativo, fecha, id_escala, id_proyecto, id_ingeniero } = req.body;
-        const datos = [nombre_resultado, descripcion, valor_cualitativo, valor_cuantitativo, fecha, id_escala, id_proyecto, id_ingeniero];
+        const { nombre_resultado, descripcion, valor_cualitativo, valor_cuantitativo, fecha, id_escala, id_proyecto, id_ingeniero, id_componente,id_criterio,id_indicador } = req.body;
+        const datos = [nombre_resultado, descripcion, valor_cualitativo, valor_cuantitativo, fecha, id_escala, id_proyecto, id_ingeniero, id_componente,id_criterio,id_indicador];
         resultadosController.crearResultado(SQL_RESULTADOS.VERIFICAR, SQL_RESULTADOS.CREAR, datos, res);
     }
 
     public editarResultado(req: Request, res: Response): void {
-        const { nombre_resultado, descripcion, valor_cualitativo, valor_cuantitativo, fecha, id_escala, id_proyecto, id_ingeniero } = req.body;
+        const {nombre_resultado, descripcion, valor_cualitativo, valor_cuantitativo, fecha, id_escala, id_proyecto, id_ingeniero, id_componente,id_criterio,id_indicador } = req.body;
         const id_resultado = req.params.id;
-        const datos = [nombre_resultado, descripcion, valor_cualitativo, valor_cuantitativo, fecha, id_escala, id_proyecto, id_ingeniero, id_resultado];
+        const datos = [nombre_resultado, descripcion, valor_cualitativo, valor_cuantitativo, fecha, id_escala, id_proyecto, id_ingeniero, id_componente,id_criterio,id_indicador, id_resultado];
         resultadosController.editarResultado(SQL_RESULTADOS.EDITAR, datos, res);
     }
 

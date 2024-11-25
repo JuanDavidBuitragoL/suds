@@ -10,14 +10,14 @@ class resultadosController extends resultadosDAO_1.default {
         resultadosController.listarTodosRes(resultadosRepository_1.SQL_RESULTADOS.LISTAR_TODOS, [], res);
     }
     crearResultado(req, res) {
-        const { nombre_resultado, descripcion, valor_cualitativo, valor_cuantitativo, fecha, id_escala, id_proyecto, id_ingeniero } = req.body;
-        const datos = [nombre_resultado, descripcion, valor_cualitativo, valor_cuantitativo, fecha, id_escala, id_proyecto, id_ingeniero];
+        const { nombre_resultado, descripcion, valor_cualitativo, valor_cuantitativo, fecha, id_escala, id_proyecto, id_ingeniero, id_componente, id_criterio, id_indicador } = req.body;
+        const datos = [nombre_resultado, descripcion, valor_cualitativo, valor_cuantitativo, fecha, id_escala, id_proyecto, id_ingeniero, id_componente, id_criterio, id_indicador];
         resultadosController.crearResultado(resultadosRepository_1.SQL_RESULTADOS.VERIFICAR, resultadosRepository_1.SQL_RESULTADOS.CREAR, datos, res);
     }
     editarResultado(req, res) {
-        const { nombre_resultado, descripcion, valor_cualitativo, valor_cuantitativo, fecha, id_escala, id_proyecto, id_ingeniero } = req.body;
+        const { nombre_resultado, descripcion, valor_cualitativo, valor_cuantitativo, fecha, id_escala, id_proyecto, id_ingeniero, id_componente, id_criterio, id_indicador } = req.body;
         const id_resultado = req.params.id;
-        const datos = [nombre_resultado, descripcion, valor_cualitativo, valor_cuantitativo, fecha, id_escala, id_proyecto, id_ingeniero, id_resultado];
+        const datos = [nombre_resultado, descripcion, valor_cualitativo, valor_cuantitativo, fecha, id_escala, id_proyecto, id_ingeniero, id_componente, id_criterio, id_indicador, id_resultado];
         resultadosController.editarResultado(resultadosRepository_1.SQL_RESULTADOS.EDITAR, datos, res);
     }
     borrarResultado(req, res) {

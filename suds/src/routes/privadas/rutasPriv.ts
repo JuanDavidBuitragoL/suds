@@ -25,22 +25,24 @@ class Rutas{
         this.rutasAPI.delete("/eliminarUsu/:id", ctrlUsuarios.borrarUsuario);
         this.rutasAPI.put("/editarUsu/:id", ctrlUsuarios.updateUsuario);
         //Componentes
-        //this.rutasAPI.get("/listarTodosCom", ctrlComponentes.ctrlListarTodosCom);
+        this.rutasAPI.get("/listarTodosCom", ctrlComponentes.listarTodosCom);
         this.rutasAPI.post("/crearCom", ctrlComponentes.crearComponente);
         this.rutasAPI.delete("/eliminarCom/:id", ctrlComponentes.borrarComponente);
         this.rutasAPI.put("/editarCom/:id", ctrlComponentes.editarComponente);
         //Criterios
-        //this.rutasAPI.get("/listarTodosCri", ctrlCriterios.listarTodosCri);
+        this.rutasAPI.get("/listarTodosCri", ctrlCriterios.listarTodosCri);
         this.rutasAPI.post("/crearCri", ctrlCriterios.crearCriterio);
         this.rutasAPI.delete("/eliminarCri/:id", ctrlCriterios.borrarCriterio);
         this.rutasAPI.put("/editarCri/:id", ctrlCriterios.editarCriterio);
         //Proyectos
-        //this.rutasAPI.get("/listarTodosPro", ctrlProyectos.listarTodosPro);
+        this.rutasAPI.get("/listarTodosPro", ctrlProyectos.listarTodosPro);
         this.rutasAPI.post("/crearPro", ctrlProyectos.crearProyecto);
         this.rutasAPI.delete("/eliminarPro/:id", ctrlProyectos.borrarProyecto);
         this.rutasAPI.put("/editarPro/:id", ctrlProyectos.editarProyecto);
+        this.rutasAPI.get("/listarComponentes/:id", ctrlProyectos.listarId);
+
         //Resultados
-        //this.rutasAPI.get("/listarTodosRes", ctrlProyectos.listarTodosPro);
+        this.rutasAPI.get("/listarTodosRes", ctrlResultados.listarTodosRes);
         this.rutasAPI.post("/crearRes", ctrlResultados.crearResultado);
         this.rutasAPI.delete("/eliminarRes/:id", ctrlResultados.borrarResultado);
         this.rutasAPI.put("/editarRes/:id", ctrlResultados.editarResultado);
